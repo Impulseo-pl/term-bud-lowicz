@@ -1847,3 +1847,116 @@ footer{view-transition-name:mt-foot}
 
 /* === szary tekst dociągnięty do czytelności (WCAG 4.5 na wszystkich tłach) === */
 :root{--muted:#6B665F;}
+
+/* ============================================================
+   MOTYW TERM-BUD - czerń i złoto prosto z logo (18.09.2026, prośba Szymona)
+   Logo klienta: złoty gradient (#F8CB89 -> #B0814C) na czarnym tle,
+   geometryczne, szeroko rozstrzelone wersaliki. Cała strona idzie w ten ton:
+   ciemne, ciepłe tło, złoto jako jedyny akcent, font nagłówków Josefin Sans
+   (geometryczny, ten sam charakter co napis TERM-BUD), tekst Jost.
+   Blok stoi NA KOŃCU pliku, więc wygrywa z wcześniejszymi :root.
+   ============================================================ */
+:root{
+  --paper:#0F0D0B; --paper-2:#16130F; --paper-3:#1D1914;
+  --ink:#F4ECDF; --ink-soft:#D6CAB6; --muted:#A99C88;
+  --line:rgba(232,196,138,.16);
+  --accent:#D9AA68; --accent-d:#B0814C; --accent-soft:rgba(217,170,104,.12);
+  --accent-text:#E6B879; --dark:#080706;
+  --gold-grad:linear-gradient(180deg,#F8CB89 0%,#D9AA68 48%,#B0814C 100%);
+  --font-display:'Josefin Sans','Jost',sans-serif;
+  --font-body:'Jost','DM Sans',sans-serif;
+  --sh-sm:0 1px 2px rgba(0,0,0,.4),0 2px 8px rgba(0,0,0,.35);
+  --sh-md:0 2px 6px rgba(0,0,0,.4),0 12px 28px -8px rgba(0,0,0,.6);
+  --sh-lg:0 6px 14px rgba(0,0,0,.45),0 26px 56px -18px rgba(0,0,0,.7);
+}
+html{background:var(--paper);color-scheme:dark}
+body{background:var(--paper);color:var(--ink)}
+h1,h2,h3{font-weight:600;letter-spacing:-.005em}
+h1{letter-spacing:-.01em}
+h2{letter-spacing:-.008em}
+.eyebrow{letter-spacing:.32em;font-weight:500}
+.eyebrow::before{background:var(--gold-grad)}
+.head p,section p{color:var(--ink-soft)}
+
+/* przyciski: złoto logo, ciemny tekst */
+.btn-accent,.nav .nav-links a.btn-accent,.btn-accent[data-accent-d],.cta-d .btn-accent{
+  background:var(--gold-grad);border-color:transparent;color:#17120B}
+.btn-accent:hover{background:var(--gold-grad);filter:brightness(1.08)}
+.btn-ghost{color:var(--ink);border-color:rgba(232,196,138,.38)}
+.btn-ghost:hover{color:var(--accent-text);border-color:var(--accent)}
+.btn-light{background:var(--gold-grad);color:#17120B}
+
+/* pasek: przezroczysty nad hero, czarny szklany po przewinięciu */
+.nav.nav-solid{background:rgba(10,9,7,.9);border-bottom:1px solid var(--line)}
+.nav.nav-solid .nav-links a:not(.btn-accent){color:var(--ink-soft)}
+.nav.nav-solid .nav-links a:not(.btn-accent):hover,.nav.nav-solid .nav-links a.active:not(.btn-accent){color:#fff}
+.nav.nav-solid .nav-links a:not(.btn-accent)::after{background:var(--accent)}
+.nav.nav-solid .nav-toggle span,.nav-toggle span{background:var(--ink)}
+.nav .nav-links a.btn-accent,.nav .nav-links a.btn-accent:hover{background:var(--gold-grad);border-color:transparent;color:#17120B}
+.nav:not(.nav-solid) .nav-links a.btn-accent{background:rgba(10,9,7,.25);border-color:rgba(232,196,138,.6);color:#F4ECDF}
+.nav:not(.nav-solid) .nav-links a.btn-accent:hover{background:var(--gold-grad);color:#17120B}
+@media(max-width:900px){.nav .nav-links{background:var(--paper-2)}}
+
+/* hero: złoty druga część tytułu */
+.hero-fach{--accent-lit:#F2C98A;--accent-strong:#F2C98A}
+.hf-title{font-weight:600;letter-spacing:-.012em}
+.hf-title em{color:#F2C98A}
+.hf-phone-num{font-weight:600}
+.hf-kicker{letter-spacing:.3em}
+
+/* karty i powierzchnie, które były białe */
+.svc,.trust-card,.form,.faq-item{background:var(--paper-2);border-color:var(--line)}
+.form input,.form textarea{background:var(--paper);color:var(--ink);border-color:var(--line)}
+.form input:focus,.form textarea:focus{background:var(--paper)}
+.fach-promise{background:var(--paper-2)}
+.fp-row li{color:var(--ink-soft)}
+.proces{background:var(--paper-2)}
+.proces-line li::after{box-shadow:0 0 0 4px var(--paper-2)}
+.proces-line .pno{color:var(--accent-text)}
+.proces-os .proc-bar > i{background:var(--gold-grad)}
+.gateway .g-ttl{font-weight:600;letter-spacing:.02em}
+.gateway{outline:1px solid rgba(232,196,138,.14);outline-offset:-1px}
+.m-tile img{outline:1px solid rgba(232,196,138,.1);outline-offset:-1px}
+.fu-name{font-weight:600;letter-spacing:.01em}
+@media(max-width:820px){.sticky-call .sc-call{background:var(--gold-grad);color:#17120B}.sticky-call .sc-quote{background:var(--paper-2);color:var(--ink)}}
+
+/* CTA i stopka: najgłębsza czerń, złota linia jak krawędź dachu z logo */
+.cta{background:var(--dark);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cta::before{background:radial-gradient(circle,rgba(217,170,104,.16),transparent 70%)}
+.cta h2{color:#F4ECDF}
+footer{background:var(--dark);border-top:1px solid var(--line)}
+footer .foot-brand .name{font-family:var(--font-display);letter-spacing:.28em;text-transform:uppercase;
+  background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.foot-col a:hover{color:var(--accent-text)}
+.pagehead{border-bottom:1px solid var(--line)}
+.pagehead .eyebrow::before{background:var(--gold-grad)}
+
+/* ============================================================
+   EKRAN ŁADOWANIA Z LOGO (tylko strona główna, raz na wizytę)
+   Czarna kurtyna jak tło logo; złoty znak wyłania się z rozmycia
+   za maską „od dołu do góry" (dom rośnie od fundamentu), pod nim
+   złota kreska, potem kurtyna odjeżdża w górę jak podnoszona brama.
+   Bezpieczniki: domyślnie ukryta, twardy limit czasu, klik/scroll
+   przerywa, reduced-motion pomija, ?intro = zagraj ponownie.
+   ============================================================ */
+.tb-intro{display:none}
+.tb-intro-on .tb-intro{display:flex;position:fixed;inset:0;z-index:9999;align-items:center;justify-content:center;
+  flex-direction:column;gap:22px;background:#080706;
+  clip-path:inset(0 0 0 0);transition:clip-path .7s cubic-bezier(.66,0,.24,1)}
+.tb-intro img{width:min(46vw,210px);height:auto;
+  clip-path:inset(100% 0 0 0);filter:blur(12px);transform:scale(1.045);
+  transition:clip-path .62s cubic-bezier(.16,1,.3,1),filter .62s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.tb-intro i{display:block;width:min(40vw,180px);height:1px;background:linear-gradient(90deg,transparent,#E6B879 30%,#E6B879 70%,transparent);
+  transform:scaleX(0);transition:transform .5s cubic-bezier(.16,1,.3,1) .14s}
+.tb-intro-gra .tb-intro img{clip-path:inset(0 0 0 0);filter:blur(0);transform:scale(1)}
+.tb-intro-gra .tb-intro i{transform:scaleX(1)}
+.tb-intro-out .tb-intro{clip-path:inset(0 0 100% 0)}
+.tb-intro-out .tb-intro img{transform:translateY(-6vh) scale(.96);filter:blur(0)}
+@media (prefers-reduced-motion:reduce){.tb-intro-on .tb-intro{display:none}}
+/* mapa Google w tonie strony (ciemna, lekko ciepła) */
+iframe.map{filter:invert(.9) hue-rotate(180deg) saturate(.6) sepia(.15);border:1px solid var(--line)}
+/* jedna reakcja na kursor dla wszystkich przycisków (złoty gradient leży na background-image,
+   więc kolor pod spodem też się zmienia - tak samo jak w przyciskach obrysowanych) */
+.btn-accent,.btn-light{background-color:#D9AA68}
+.btn-accent:hover,.btn-light:hover{background-color:#E6B879}
+.hf-kicker{color:#F8DDB0}

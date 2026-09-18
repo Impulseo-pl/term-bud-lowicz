@@ -2,6 +2,7 @@
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
+<meta name="theme-color" content="#0F0D0B">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Term-Bud - wykończenia wnętrz · Łowicz i okolice</title>
 <meta name="description" content="Term-Bud - wykończenia wnętrz pod klucz w Łowiczu i okolicach. Łazienki, kuchnie, gładzie i malowanie, podłogi, sufity podwieszane, poddasza. Zadzwoń i umów oględziny.">
@@ -20,10 +21,34 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Term-Bud", "url": "https://kris20032.github.io/term-bud-lowicz/", "telephone": "+48725985871", "image": "https://kris20032.github.io/term-bud-lowicz/img/og.jpg", "areaServed": "Łowicz", "sameAs": ["https://www.facebook.com/p/Term-Bud-%C5%81owicz-100028941773326/"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css?v=5d3cfe52">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css?v=tb-zloto1">
+<link rel="preload" as="image" href="img/logo.png" fetchpriority="high">
+<script>(function(){try{var d=document.documentElement;
+if(location.search.indexOf('intro')<0&&sessionStorage.getItem('tb-intro'))return;
+if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+sessionStorage.setItem('tb-intro','1');d.classList.add('tb-intro-on');
+setTimeout(function(){d.classList.remove('tb-intro-on','tb-intro-gra','tb-intro-out')},3500);
+}catch(e){}})();</script>
 </head>
 <body>
+<div class="tb-intro" aria-hidden="true"><img src="img/logo.png" alt="" width="573" height="656"><i></i></div>
+<script>(function(){var d=document.documentElement;if(!d.classList.contains('tb-intro-on'))return;
+var c=document.querySelector('.tb-intro'),logo=c.querySelector('img'),ruszylo=false,koniec=false,start=0,MIN=820,SUFIT=1100;
+function sprzataj(){d.classList.remove('tb-intro-on','tb-intro-gra','tb-intro-out');}
+function odslon(){if(koniec)return;koniec=true;d.classList.add('tb-intro-out');setTimeout(sprzataj,760);}
+function heroGotowe(){var im=document.querySelector('.hf-photo');return !!(im&&im.complete&&im.naturalWidth>0);}
+var zaladowane=false;addEventListener('load',function(){zaladowane=true;});
+function moze(){if(koniec)return;if(Date.now()-start>=MIN&&(heroGotowe()||zaladowane))odslon();else setTimeout(moze,70);}
+function graj(){if(ruszylo)return;ruszylo=true;start=Date.now();
+requestAnimationFrame(function(){requestAnimationFrame(function(){d.classList.add('tb-intro-gra');});});
+moze();setTimeout(odslon,SUFIT);setTimeout(sprzataj,2600);}
+function zacznij(){if(logo.decode)logo.decode().then(graj,graj);else graj();}
+if(logo.complete&&logo.naturalWidth>0)zacznij();
+else{logo.addEventListener('load',zacznij);logo.addEventListener('error',sprzataj);
+setTimeout(function(){if(!ruszylo){(logo.complete&&logo.naturalWidth>0)?zacznij():sprzataj();}},1400);}
+['wheel','touchstart','keydown','mousedown'].forEach(function(e){addEventListener(e,function(){if(ruszylo)odslon();else sprzataj();},{once:true,passive:true});});
+})();</script>
 
 <header class="nav">
   <div class="wrap nav-inner">
@@ -85,7 +110,7 @@
       <li class="reveal"><span class="pno">01</span><h3>Wycena po oględzinach</h3><p>Wpadamy obejrzeć temat i doradzamy. Bez faktury i bez zobowiązań.</p></li>
       <li class="reveal"><span class="pno">02</span><h3>Kosztorys i termin</h3><p>Wycena z terminem, czarno na białym - przed startem, nie po fakcie.</p></li>
       <li class="reveal"><span class="pno">03</span><h3>Realizacja</h3><p>Wykonanie zgodne z ustaleniami, bez przeciągania.</p></li>
-      <li class="reveal"><span class="pno">04</span><h3>Odbiór</h3><p>Oddajemy wnętrze w umówionym terminie i razem sprawdzamy każdy detal.</p></li>
+      <li class="reveal"><span class="pno">04</span><h3>Odbiór</h3><p>Oddajemy wnętrze w umówionym terminie i&nbsp;razem sprawdzamy każdy detal.</p></li>
     </ol>
   </div>
 </section>
